@@ -8,6 +8,7 @@ import re
 1. 컴파일 후 매칭
 > pattern = re.compile(**"패턴"**)
 > x = pattern.search("I like apple!")
+> pattern 객체를 생성한다!
 ```
 import re
 pattern = re.compile("apple")
@@ -45,9 +46,47 @@ print(re.findall(pattern_1, test))
 print(re.findall(pattern_2, test))
 print(re.findall(pattern_3, test))
 ```
-- +, *
+- 여러 문자 (표현)
 > (별)은 0회 이상 반복
 > +는 1회 이상 반복
+> ?는 0회 또는 1회 (있어도 되고 없어도 됨)
+> ^은 문자열의 시작 ([]안에 없어야 함)
+> $은 문자열의 끝
+> \은 이스케이프 문자, 메타문자를 일반 문자로 인식하게 함
+> ()은 그룹핑, 추출할 패턴을 지정
+```
+import re
+test = "ab1abca biabja b."
+pattern_1 = re.compile("[\w]*")
+pattern_2 = re.compile("[\w]?")
+pattern_3 = re.compile("[\w]+")
+print(re.findall(pattern_1, test))    # ['ab1abca', '', 'biabja', '', 'b', '', '']
+print(re.findall(pattern_2, test))    # ['a', 'b', '1', 'a', 'b', 'c', 'a', '', 'b'...
+print(re.findall(pattern_3, test))    # ['ab1abca', 'biabja', 'b']
+```
+
+
+- 축약 표현
+> \d : 숫자
+> \D : 숫자가 아닌 것(텍스트, 특수문자, white space)
+> \s : white space (space, tap, new line)
+> \S : white space가 아닌 것 (텍스트, 특수문자, 숫자)
+> \w : 문자 (텍스트 & 숫자)
+> \W : 문자(텍스트&숫자)가 아닌 것 (특문, white space)
+```
+import re
+test = "ab1abcabiabjab."
+pattern_1 = re.compile("\w")
+pattern_2 = re.compile("[\w]")
+pattern_3 = re.compile("\d")
+pattern_4 = re.compile("\s")
+pattern_5 = re.compile("[^\w]")
+print(re.findall(pattern_1, test))    # ['a', 'b', '1', 'a', 'b', 'c', 'a', 'b', 'i'...
+print(re.findall(pattern_2, test))    # ['a', 'b', '1', 'a', 'b', 'c', 'a', 'b', 'i'...
+print(re.findall(pattern_3, test))    # ['1']
+print(re.findall(pattern_4, test))    # [' ', ' ']
+print(re.findall(pattern_5, test))    # [' ', ' ', '.']
+```
 
 ## findall
 > re.findall(**패턴 문자열**, **찾는 대상의 문자열**, **플래그(없어도 됨)**
