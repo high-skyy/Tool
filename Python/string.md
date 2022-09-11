@@ -147,6 +147,40 @@ print(test_list)
 # ['M', 'y', ' ', 'n', 'a', 'm', 'e', ' ', 'i', 's', ' ', 'S', 'a', 'n', 'g', 'H', 'y', 'u', 'n']
 ```
 
+### F-string
+> f"**문자열**{**변수**:(**0공백**)(**화살표**)(**자릿수**)}"
+> 변수를 넣고 싶을 경우에는 {}(중괄호) 내부에 넣어주고 (공백) 자리에 0 넣으면 공백을 0으로 채운다
+> 채움 화살표는 왼쪽 정렬(<), 오른쪽 정렬(>), 가운데 정렬(^) 옵션을 넣어주고 그 다음에는 자릿수를 알려주는 숫자를 넣어주면 된다.
+> (소수 자릿 수 지정하고 싶으면 자릿수 다음에 '.' + (소수 몇 째 자리) + f 넣어주면 된다.)
+```
+day = '수'
+hour = 5
+minute = 30
+print(f'오늘은 {day}요일이며, 현재 시각은 {hour}시 {minute}분 입니다.')
+# 오늘은 수요일이며, 현재 시각은 5시 30분 입니다.
+```
+```
+pi = 3.1416
+print(f'소수점 세 자리 : {pi:.3f}')           # 소수점 세 자리 : 3.142 (반올림 한다.)
+print(f'소수점 네 자리 : {pi:.4f}')           # 소수점 네 자리 : 3.1416
+
+print(f'10칸 공백 채움 소수점 두 자리 : {pi:10.2f}')
+# 10칸 공백 채움 소수점 두 자리 :       3.14
+
+print(f'10칸 0 채움 소수점 두 자리 : {pi:010.2f}' )
+# 10칸 0 채움 소수점 두 자리 : 0000003.14
+
+print(f'{pi:0^10.2f}')              # 0003.14000
+# (나머지 0으로 채우고 가운데 정렬(^) 10개의 숫자 출력 소수점 둘째자리 까지(.2f)
+```
+```
+char_a = '5'
+print(f'{char_a:>5}')           #     5
+print(f'{char_a:<5}')           # 5    
+print(f'{char_a:^5}')           #   5  
+print(f'{char_a:0<5}')          # 50000 (왼쪽 정렬 + 빈자리 0으로 채우기)
+```
+
 ## Reference
 - [Reference] (https://snowple.tistory.com/271#:~:text=Python%20%2F%20Python%20%EB%AC%B8%EC%9E%90%EC%97%B4%20%EB%8B%A4%EB%A3%A8%EA%B8%B0,-Technology%2FProgramming&text=%EC%B2%AB%20%EB%AC%B8%EC%9E%90%EB%A5%BC%20%EB%8C%80%EB%AC%B8%EC%9E%90%EB%A1%9C,%EB%A5%BC%20%EC%86%8C%EB%AC%B8%EC%9E%90%EB%A1%9C%20%EB%B0%94%EA%BF%94%EC%A4%80%EB%8B%A4.&text=parameter%EA%B0%80%20%EB%AA%87%20%EB%B2%88%20%ED%8F%AC%ED%95%A8%EB%90%98%EC%96%B4%20%EC%9E%88%EB%8A%94%EC%A7%80%20%EC%95%8C%EB%A0%A4%EC%A4%80%EB%8B%A4.&text=str%20class%EB%8A%94%20%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9C%BC%EB%A1%9C%20%EB%AA%A8%EB%91%90%20%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C%EC%9D%B4%EB%8B%A4.&text=tab%EC%9D%84%20%EA%B3%B5%EB%B0%B1%EC%9C%BC%EB%A1%9C%20%EC%B9%98%ED%99%98%ED%95%A9%EB%8B%88%EB%8B%A4.)
 - [Reference] (https://rebro.kr/123#:~:text=2.-,%EB%AC%B8%EC%9E%90%EC%97%B4%20%EC%97%B0%EC%82%B0%ED%95%98%EA%B8%B0,%EC%9D%B4%EC%96%B4%20%EB%B6%99%EC%9D%B8%EB%8B%A4%EB%8A%94%20%EC%9D%98%EB%AF%B8%EC%9D%B4%EB%8B%A4.)
