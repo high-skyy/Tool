@@ -4,6 +4,51 @@ import re
 ```
 > 사용하는 이유는 regular expression을 사용하여 포괄적인 단어들을 찾기 위함이다.
 
+## regular expression 사용법
+1. 컴파일 후 매칭
+> pattern = re.compile(**"패턴"**)
+> x = pattern.search("I like apple!")
+```
+import re
+pattern = re.compile("apple")
+print(pattern.search("I like apple!").group())        # apple
+```
+2. 축약형
+> 그냥 패턴 직접 입력
+> x = re.search(**"패턴"**, **"문자열"**)
+
+## Meta characters
+- []
+> []사이의 문자들 중 하나와 매치(or과 역할 비슷)
+> 하이픈(-) 으로 연결 가능 ([0-9], [a-z])
+> [^ ]으로 시작할 경우 반대 의미(해당 문자가 아니면 매치)
+```
+import re
+test = "1ajgdlfkjg3skdlfj4"
+pattern_1 = re.compile("[0-9]")
+pattern_2 = re.compile("[^0-9]")
+print(re.findall(pattern_1, test))    # ['1', '3', '4']
+print(re.findall(pattern_2,test))     # ['a', 'j', 'g', 'd', 'l', 'f', 'k', 'j', 'g', 's', 'k', 'd', 'l', 'f', 'j']
+```
+
+- .(점)
+> \n을 제외한 모든 문자와 매치
+> 단, 문자클래스 안의 .([.])은 말 그대로 '.'을 의미함
+> 또 한 가지 방법은 .앞에 \를 붙이면 된다. '\.'이면 '.' 그대로를 의미함
+```
+import re
+test = "ab1abcabiabjab."
+pattern_1 = re.compile("ab.")       # ['ab1', 'abc', 'abi', 'abj', 'ab.']
+pattern_2 = re.compile("ab\.")      # ['ab.']
+pattern_3 = re.compile("ab[.]")     # ['ab.']
+print(re.findall(pattern_1, test))
+print(re.findall(pattern_2, test))
+print(re.findall(pattern_3, test))
+```
+- +, *
+> (별)은 0회 이상 반복
+> +는 1회 이상 반복
+
 ## findall
 > re.findall(**패턴 문자열**, **찾는 대상의 문자열**, **플래그(없어도 됨)**
 > 문자열 안에 패턴에 맞는 케이스를 전부 찾아서 리스트로 반환합니다.
@@ -56,8 +101,6 @@ print(re.search('aa', 'baab').end())          # 3
 print(re.search('aa', 'baab').span())         # (1, 3)
 ```
 
-
-
-
-
+## Reference
+- [Reference](https://velog.io/@dosilv/python-%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9Dregular-expression-%EC%82%AC%EC%9A%A9%EB%B2%95)
 
