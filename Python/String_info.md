@@ -1,3 +1,0 @@
-# Information about handling strings
-
-## 
