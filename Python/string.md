@@ -14,7 +14,7 @@ print(b + a)        # hellopython
 ```
 
 ### strip
-> 문자열.lstrip( 삭제할 문자열 ) / 문자열.rstrip( 삭제할 문자열)
+> **문자열**.lstrip( **삭제할 문자열** ) / **문자열**.rstrip( **삭제할 문자열**)
 > 원래 문자열을 변환 시키는 것이 아닌 적용된 값을 반환한다.
 > lstrip의 경우는 왼쪽 부터 검사했을 때 해당 문자열이 존재할 경우 삭제 아니면 삭제 안함
 > rstrip은 오른쪽에서 부터 검사
@@ -49,6 +49,102 @@ test_3 = test_3.replace("Hello", "Bye", 1)
 print(test_3)                                 # Bye Hello python
 test_4 = test_4.replace("Hello", "Bye", 2)
 print(test_4)                                 # Bye Bye python
+```
+
+### 대소문자
+> **문자열**.upper()는 모든 문자열을 대문자로
+> **문자열**.lower()는 모든 문자열을 소문자로
+> **문자열**.title()는 모든 단어 앞을 대문자로
+> **문자열**.capitalize()는 문장의 맨 앞 단어 만을 대문자로
+```
+test = "Hello Python"
+test = test.upper()
+print(test)                 # HELLO PYTHON
+test = test.lower()
+print(test)                 # hello python
+test = test.title()
+print(test)                 # Hello Python
+test = test.capitalize()
+print(test)                 # Hello python
+```
+
+### Count
+> **문자열**.count(**'찾고 싶은 문자'**)
+> 특정 문자의 개수를 반환 해준다.
+```
+test = "AAaaabbccc"
+print(test.count('A'))        # 2
+print(test.count('c'))        # 3
+print(test.count('z'))        # 0
+```
+
+### Find
+> **문자열**.find(**'찾고 싶은 문자'**, )
+> Find 함수는 해당 문자가 처음으로 등장하는 인덱스를 반환해줍니다. (문자가 없으면 -1을 반환)
+```
+test = "AAaaabbccc"
+print(test.find('A'))         # 0
+print(test.find('c'))         # 7
+print(test.find('z'))         # -1
+```
+
+### 문자열 구성 파악
+> **문자열**.함수이름()
+> isalpha : 문자열 전체가 알파벳(한글)이면 True
+> isdigit : 문자열 전체가 숫자이면 True
+> isupper : 문자열 전체가 대문자이면 True
+> islower : 문자열 전체가 소문자이면 True
+> 주의 : lower랑 upper는 상관 없지만 alpha랑 digit는 중간에 공백이 있을 경우에 False가 된다.
+```
+test_1 = '123'
+test_2 = 'abc'
+test_3 = 'aBC'
+test_4 = 'ABC'
+print(test_1.isalpha())       # False
+print(test_1.isdigit())       # True
+print(test_2.isdigit())       # False
+print(test_2.isalpha())       # True
+print(test_2.isupper())       # False
+print(test_2.islower())       # True
+print(test_3.isupper())       # False
+print(test_3.islower())       # False
+print(test_4.islower())       # False
+print(test_4.isupper())       # True
+print(test_5.isdigit())       # False
+print(test_6.isalpha())       # False
+```
+
+### 문자열 쪼개기, 합치기
+> **문자열**.join(**list**)
+> join의 경우는 list에서 하나 받아와서 앞에 넣고 그 다음에 원래 문자열 넣고 list 다음 원소 넣고 다시 문자열 넣고 다음 원소를 다시 넣는다.
+> **문자열**.split(**"기준 문자열" (기본값 : 공백)**
+```
+# JOIN
+test_1 = 'abc'
+test_2 = ['d', 'e', 'f']
+test_3 = ['ab', 'cd','ef']
+print(test_1.join(test_2))        # dabceabcf
+test_4 = "".join(test_3)
+print(test_4)                     # abcdef
+```
+```
+# Split
+test_1 = "My name is 서상현"
+test_2 = "Mywnamewisw서상현"
+for word in test_1.split():   
+    print(word)                   # My / name / is / 서상현
+test_list = test_1.split()
+print(test_list)                  # ['My', 'name', 'is', '서상현']
+test_list_2 = list(test_2.split('w'))
+print(test_list_2)                # ['My', 'name', 'is', '서상현']
+```
+
+```
+# Tip 한 문자 씩 받기
+test = "My name is SangHyun"
+test_list = list(test)
+print(test_list)
+# ['M', 'y', ' ', 'n', 'a', 'm', 'e', ' ', 'i', 's', ' ', 'S', 'a', 'n', 'g', 'H', 'y', 'u', 'n']
 ```
 
 ## Reference
