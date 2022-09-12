@@ -30,6 +30,24 @@ if key값 in dict_1                            # dictionary에 key값 존재하�
 del dict_1['key값']                           # 원소를 삭제 할 수 있지만 키가 없을 시에 파이썬 런타임은 keyError를 던진다.
 print(dict_1.pop("E", key가 존재하지 않을 시 반환되는 default 값(설정가능)))     # 있으면 value 반환 없으면 2번째 인자 반환
 ```
+- 특이사항
+```
+처음에 넣어준 순서가 보장이 된다
+from collections import defaultdict
+result = defaultdict(int)
+from collections import defaultdict
+result = defaultdict(int)
+result[1] = 1
+result[3] = 1
+result[2] = 1
+print(sorted(result, key = lambda x : result[x], reverse = True))     # [1, 3, 2]
+from collections import defaultdict
+result = defaultdict(int)
+result[1] = 1
+result[2] = 1
+result[3] = 1
+print(sorted(result, key = lambda x : result[x], reverse = True))     # [1, 2, 3]
+```
 
 ## Counter
 ```
