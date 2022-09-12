@@ -132,6 +132,7 @@ print(test_2)                                 # Bye Bye Hello Python
 - start : 문자열의 어디서부터 패턴이 시작되는지 index 반환
 - end   : 문자열의 어디서 패턴이 끝나는지
 - span  : 문자열의 어디서부터 어디까지 패턴이 있는지 index 반환
+> 주의 : 해당 문자열을 찾을 수 없을 경우 search 함수에서 None이 반환된다. (None일 때, group등의 함수를 같이 한번에 사용하면 오류 발생함)
 ```
 import re
 print(re.search('aa', 'baab').group())        # aa
