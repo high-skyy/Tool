@@ -1,5 +1,9 @@
 # Basic Functions
 
+## Operator(연산자)
+- Exponentiation : **
+- Floor division : //
+
 ## 형 변환
 syntax : int( 변환해야 할 변수 ) 
 ```
