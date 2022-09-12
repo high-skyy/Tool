@@ -38,6 +38,35 @@ syntax : 리스트명.remove(값)
 # 주의 사항 : 가장 먼저 발견한 값 만을 삭제해준다. 전부 다 삭제하고 싶을 경우 for문을 이용하자.
 # 해당 value가 list 내부에 존재하지 않을 경우에 오류가 발생한다.
 ```
+### insert
+> **리스트 이름**.insert(**index**, **object**)
+해당 자리에 오브젝트가 들어가며 자동적으로 list가 이에 맞춰 배열됨 (사이에 들어갈 때만)
+```
+a = [1,2,3]
+a.insert(0,'4')
+print(a)                # ['4', 1, 2, 3]
+
+list_1 = []
+list_1.insert(4, 0)
+print(list_1)               # [0]
+```
+
+### index
+첫 번째 일치 항목의 인덱스를 반환
+> **리스트 이름**.index(**value**)
+```
+a = [1,2,3,1]
+print(a.index(1))               # 0
+```
+
+### count
+인수로 전달 된 항목 수의 개수를 반환한다.
+> **리스트 이름**.count(**value**)
+```
+a = [1,2,3,1]
+print(a.count(1))               # 2
+```
+
 ### 특이점 
 python의 경우 list의 비교시 == 으로 직접 비교가 가능하다.
 ```
@@ -162,3 +191,5 @@ for _ in zip(dict_2, dict_2):
 # 각자 끼리 하고 싶으면 tuple(key, value)가 나타나는 형태로 바꾸어서 해야 할 것 같다.)
 ```
 
+## Reference
+[Reference] (https://sinaworld.co.kr/39)
