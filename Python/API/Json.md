@@ -64,10 +64,10 @@ data = requests.get(URL).json()
 - 가져온 JSON 파일을 Parsing 해서 사용하기!
 ```
 value = data["people"]
-# 아까도 말했듯이 name은 
+# 아까도 말했듯이 name은 ""사이에 있다.
 ```
 
 
 ## Reference
-[Reference](https://qgqg264.tistory.com/49)
-[Reference](https://velog.io/@surim014/JSON%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80)
+- [Reference](https://qgqg264.tistory.com/49)
+- [Reference](https://velog.io/@surim014/JSON%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80)
