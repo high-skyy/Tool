@@ -53,7 +53,7 @@ print(re.findall(pattern_3, test))
 - ^은 문자열의 시작 ([]안에 없어야 함)
 - $은 문자열의 끝
 - \은 이스케이프 문자, 메타문자를 일반 문자로 인식하게 함
-- ()은 그룹핑, 추출할 패턴을 지정
+- ()은 그룹핑, 추출할 패턴을 지정 (그룹핑 메타 문자 있어야 함)
 ```
 import re
 test = "ab1abca biabja b."
@@ -63,6 +63,9 @@ pattern_3 = re.compile("[\w]+")
 print(re.findall(pattern_1, test))    # ['ab1abca', '', 'biabja', '', 'b', '', '']
 print(re.findall(pattern_2, test))    # ['a', 'b', '1', 'a', 'b', 'c', 'a', '', 'b'...
 print(re.findall(pattern_3, test))    # ['ab1abca', 'biabja', 'b']
+
+re.findall(f"[^a-z]({word})[^a-z]", page)
+# page에서 앞과 뒤에 문자가 아닌 것이 오면 
 ```
 
 
