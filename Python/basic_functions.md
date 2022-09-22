@@ -23,10 +23,24 @@ print(list(range(1, 100, 11))     # [1, 12, 23, 34, 45, 56, 67, 78, 89]
 ```
 
 ## list methods
-### list의 길이
-syntax : len(list)
+
+### index 특성
+- 양수 혹은 음수를 가질 수 있다.
+양수 : 제일 앞에서부터 0을 시작으로 번호를 뒤쪽으로 증가하면서 매깁니다.  
+음수 : 제일 뒤에서부터 -1을 시작으로 번호를 앞쪽으로 감소하면서 매깁니다.  
 ```
-len( list_name )
+| a | b | c | d | e |
+| 0 | 1 | 2 | 3 | 4 |
+|-5 |-4 |-3 |-2 |-1 | 
+```
+
+### slicing
+> **list_이름** = [**start**:**end**:**step**]  
+(start default = list 시작 점 / end default = list 끝 점)
+```
+temp = [1,2,3,4,5]
+temp [:-1]          # [1,2,3,4]
+temp[::2]           # 리스트에서 2 step씩 이동하며 가져오기
 ```
 
 ### 리스트 삭제(index)
@@ -87,6 +101,21 @@ x, y = [[1,2], [3, 4]], y = [[1,2], [3,4]]
 x == y                  # True가 된다.
 ```
 
+### python 만의 list 쉽게 사용 하는 방법
+```
+list_1 = [x * y for x in range(1,10) if x is 3 or x is 7 for y in range(1,10)]
+
+for x in range(1,10):
+    if x is 3 or 7:
+        for y in range(1,10):
+            list_1.append(x*y)
+# 위와 아래의 식들이 동일하다.
+```
+```
+print([[1] * 5])         # [[1, 1, 1, 1, 1]]
+print([[1] * 3 for i in range(3)])    # [[1,1,1], [1,1,1], [1,1,1]]
+```
+
 ## print 함수들
 ```
 print("a + b :", a+b)       # a + b = 15
@@ -109,6 +138,12 @@ list2 = [[1,2], [2,1], [1,3], [3,1]]
 print(sorted(list1))                      # [1, 2, 3, 4, 5]
 print(sorted(list1, reverse = True))      # [5, 4, 3, 2, 1]
 print(sorted(list2, key = lambda x : x[1]))   # [[2, 1], [3, 1], [1, 2], [1, 3]]
+```
+
+### slicing
+> a[start:end:step]
+```
+
 ```
 
 ##  lambda 함수
@@ -153,21 +188,6 @@ p.discard(5)            # {1,2,5}
 - 연산자 이용 가능 (| : 합집합, & 교집합, - : 차집합, ^ : 합집합 - 교집합
 ```a | b     a & b      a - b       a ^ b```
 
-## python 만의 list 쉽게 사용 하는 방법
-```
-list_1 = [x * y for x in range(1,10) if x is 3 or x is 7 for y in range(1,10)]
-
-for x in range(1,10):
-    if x is 3 or 7:
-        for y in range(1,10):
-            list_1.append(x*y)
-# 위와 아래의 식들이 동일하다.
-```
-```
-print([[1] * 5])         # [[1, 1, 1, 1, 1]]
-print([[1] * 3 for i in range(3)])    # [[1,1,1], [1,1,1], [1,1,1]]
-```
-
 ## if의 인자에 따른 특별한 결과
 - None을 주면 거짓 None이 아닌 값을 주면 참
 ```
@@ -206,3 +226,4 @@ for _ in zip(dict_2, dict_2):
 
 ## Reference
 [Reference] (https://sinaworld.co.kr/39)
+[Reference] (https://twpower.github.io/119-python-list-slicing-examples)
