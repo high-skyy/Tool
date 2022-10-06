@@ -3,6 +3,26 @@
 ## personal command $
 ```
 # \d                            // database 내 relation 정보 확인
+# SELECT* FROM pg_indexes WHERE tablename = [TABLE 이름];  // 해당 table의 index들을 조회
+# \di                           // index 조회
+```
+
+
+
+## Basic Manipulation
+```
+UPDATE [테이블 이름] SET [컬럼 이름] = [값], , , WHERE [조건];
+```
+
+## index
+```
+CREATE INDEX [인덱스 이름] ON [테이블 이름] (컬럼 이름)       # 일반적으로
+DROP INDEX [인덱스 이름]
+```
+
+## analyzing command
+```
+# explain analyze [Query 문]         // query plan 과 execution time을 알려준다.
 ```
 
 ## basic commands
@@ -22,15 +42,6 @@
 # \q                            // psql 종료
 # \set [name] [value]           // 변수 선언 및 초기화
 # \echo [name]                  // 변수를 호출하여 변수에 저장된 값이 출력
+# SELECT* FROM pg_indexes WHERE tablename = [TABLE 이름];
 ```
 - [Reference](https://kwomy.tistory.com/8)
-
-## index
-```
-CREATE INDEX [인덱스 이름] ON [테이블 이름] (컬럼 이름)       # 일반적으로
-```
-
-## analyzing command
-```
-# explain analyze [Query 문]         // query plan 과 execution time을 알려준다.
-```
