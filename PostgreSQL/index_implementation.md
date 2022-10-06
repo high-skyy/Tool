@@ -44,8 +44,15 @@ In particular, the PostgreSQL query planner will consider using a B-tree index w
 ### Hash
 Hash indexes store a 32-bit hash code derived from the value of the indexed column.
 Hence, such indexes can only handle simple equality comparisons.
-The query planner will consider using a hash 
+The query planner will consider using a hash index whenever an indexed column is involved in a comparison using (=)
+> Hash index의 경우 index된 column에 대한 32-bit hash code를 저장한다. Query planner의 경우 hash index를 = 으로 비교할 때에만 주로 사용한다.
 
+### GIST
+GIST indexes are not a single kind of index, but rather an infrastructure within which many different indexing strategies can be implemented.
+Accordingly, the particular operators with which a GiST index can be used vary depending on the indexing strategy.
+As an example, the standard distribution of PostgreSQL includes GiST operator classes for several two-dimensional geometric data types
+which support indexed queries using (<< &< ...)
+> GIST index의 경우 여러 index를 구현하느데 사용된다. 예시 : two-dimensional geometric data
 
 - [Reference](https://www.postgresql.org/docs/current/indexes-types.html) 
 
