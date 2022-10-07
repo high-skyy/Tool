@@ -1,4 +1,4 @@
-# index를 postgreSQL 내부에서 구현하는 방법
+# index를 postgreSQL 내부에서 구현 및 사용되는 방법
 
 ## Cluster-Index
 > 일반적으로 PostgreSQL은 table의 attribute들의 distribution을 확인하여 index를 만들면 자동적으로 cluster 또는 non-cluster index를 만들어준다.

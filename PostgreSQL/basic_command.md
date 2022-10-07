@@ -3,11 +3,19 @@
 ## personal command $
 ```
 # \d                            // database 내 relation 정보 확인
-# SELECT* FROM pg_indexes WHERE tablename = [TABLE 이름];  // 해당 table의 index들을 조회
+# SELECT* FROM pg_indexes WHERE tablename = '[TABLE 이름]';  // 해당 table의 index들을 조회 '' 있어야 인식됨
 # \di                           // index 조회
+# CREATE INDEX [인덱스 이름] ON [테이블 이름] (컬럼 이름)       # 일반적으로
+# DROP INDEX [인덱스 이름]
+# EXPLAIN ANALYZE [Query 문]
+# SELECT count(*) FROM [table 이름]   // 행 갯수 반환
 ```
 
-
+## methods
+```
+random ()                   # 0부터 1사이에 값을 하나 반환한다.
+generate_series(start, end, offset)     # python의 range함수와 똑같다.
+```
 
 ## Basic Manipulation
 ```
