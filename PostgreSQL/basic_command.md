@@ -9,6 +9,7 @@
 # DROP INDEX [인덱스 이름]
 # EXPLAIN ANALYZE [Query 문]
 # SELECT count(*) FROM [table 이름]   // 행 갯수 반환
+# 
 ```
 
 ## methods
@@ -33,6 +34,12 @@ DROP INDEX [인덱스 이름]
 # explain analyze [Query 문]         // query plan 과 execution time을 알려준다.
 ```
 
+## joins between tables
+```
+# SELECT * FROM weather JOIN cities ON city = name;
+```
+- [Reference](https://www.postgresql.org/docs/current/tutorial-join.html)
+
 ## basic commands
 ```
 # \h                            // sql에 대한 명령어 정보
@@ -52,4 +59,7 @@ DROP INDEX [인덱스 이름]
 # \echo [name]                  // 변수를 호출하여 변수에 저장된 값이 출력
 # SELECT* FROM pg_indexes WHERE tablename = [TABLE 이름];
 ```
+
+
+
 - [Reference](https://kwomy.tistory.com/8)
