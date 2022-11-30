@@ -26,5 +26,7 @@ parser.add_argument("-d", "--decimal", dest = "decimal", action = "store")
 parser.add_argument("-f", "--fast", dest = "fast", action = "store_true")
 ```
 
+![add_argument](https://user-images.githubusercontent.com/105041834/204755351-531d09e0-ee9f-4907-9dae-db2211fcefb7.jpg)
+
 ## Reference
 - [Reference](https://wikidocs.net/73785)

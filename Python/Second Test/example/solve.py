@@ -13,6 +13,7 @@ TOKEN = ""
 problem_info = {1: {"num_users": 30, "avr_match": 1},
                 2: {"num_users": 900, "avr_match": 45}}
 
+# 머리 되게 좋다. 원하는 함수로 바꾸기
 get_method = lambda url : http_method("GET", args.base_url, url, token=TOKEN)
 post_method = lambda url, data : http_method("POST", args.base_url, url, data=data, token=TOKEN)
 put_method = lambda url, data : http_method("PUT", args.base_url, url, data=data, token=TOKEN)
