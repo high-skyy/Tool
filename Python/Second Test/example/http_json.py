@@ -9,7 +9,6 @@ def http_method(method : str, base_url : str, sub_url : str, data={}, token="", 
         headers['X-Auth-Token'] = token
     else:
         headers['Authorization'] = token
-
     if method == "GET":
         response = requests.get(base_url+sub_url, headers=headers)
     elif method == "POST":

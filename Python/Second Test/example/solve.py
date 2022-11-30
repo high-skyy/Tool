@@ -20,6 +20,11 @@ put_method = lambda url, data : http_method("PUT", args.base_url, url, data=data
 ####################
 #       APIS       #
 ####################
+"""
+python3 solve.py --problem 1 --init-token $INIT_TOKEN --base-url $BASE_URL --match-skill 20000 --wait-weight 3
+python3 solve.py --problem 2 --init-token $INIT_TOKEN --base-url $BASE_URL --match-skill 10000 --wait-weight 4
+"""
+
 
 def api_start(problem, init_token):
     assert 1 <= problem <= 2

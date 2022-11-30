@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# cmd 창에서 실행 방법 bash <run_file_name>.sh
 INIT_TOKEN=""
 BASE_URL="https://huqeyhi95c.execute-api.ap-northeast-2.amazonaws.com/prod"
 
