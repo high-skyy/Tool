@@ -90,15 +90,27 @@ r = requests.post(url, json=payload)
 ## curl 읽는 법
 > REST api 문서들을 보면 curl 방식으로 가이드가 되어 있다.
 
--d : data 함께 전달할 파라미터 값 설정하기
 -f : files
 -j : json
--H : headers
--A : 헤더의 user-agent가 안내
+
 -G : 전송할 사이트 url 및 ip 주소
--i : 사이트의 Header 정보만 가져오기
--l : 사이트의 Header와 바디 정보를 함께 가져오기
 -u : 사용자 정보
+
+-i(--include) : 응답에 Content만 출력하지 않고 서버의 Response도 포함해서 출력
+-A(--user-agent) : 서버에 User-Agent <name> 보내기
+-k(--insecure) : https protocol에서 SSL인증서에 대한 검증없이 연결
+-l(--head) : HTTP 헤더만 보여주고 컨텐츠는 표시하지 않음
+-D(--dump-header<file>) : HTTP 헤더를 file에 기록 (덤프)
+-L(--location) : HTTP 301, 302 응답을 받은 경우 리디렉션 URL로 따라간다.
+-d(--data) : HTTP POST 요청 데이터 입력
+-v(--verbose) : 동작하면서 세세한 내용을 출력
+-J(--remote-header-name) : 헤더에 있는 파일 이름으로 다운로드 파일을 저장
+-o(--output FILE) : curl로 받아온 내용을 FILE 이라는 이름의 파일로 저장.
+-O(--remote-name) : 파일 저장시 리모트에 저장되어 있는 이름을 그대로 가져와서 로컬에 저장
+-s(--silent) : 진행 내용이나 메세지들을 출력하지 않음
+-X(--request) : 요청시 사용할 메소드의 종류 (GET, POST, PUT, PATCH, DELETE)
+-H(--header) : 헤더를 보낸다. (헤더가 여러 개일 경우, 파라미터를 여러 개 붙인다.)
+
 
 ### examples
 ```
