@@ -60,6 +60,8 @@
 - 하나 이상의 컨테이너의 그룹으로 구성됨.
   - 파드 내의 컨테이너들은 스토리지와 네트워크를 공유함.
 
+> Application이 Container를 할당 받아서 Application = Container라고 봐도 무방할 것 같다.
+
 ![Pod Networking](https://user-images.githubusercontent.com/105041834/205580387-37da08bf-0452-4f75-b05e-314d44265ac9.jpg)
 - Networking in Pods
   - 각 파드에는 고유한 IP 주소가 할당되며, 이 네트워크 네임스페이스는 파드 내 모든 컨테이너가 공유함.
@@ -79,6 +81,7 @@ $ kubectl apply -f filenmae.yaml
   - Unknown : 추적이 불가능한 경우
   
 > 컨테이너는 근본적으로 프로세스이며, Pod는 컨테이너들을 실행하기 위해 논리적으로 격리된 환경
+
 ### ReplicaSet
 - 일반적으로 파드를 kubectl run 명령이든, yaml 파일이든 직접 생성하지는 않음.
   - Deployment, ReplicaSet, Job과 같은 **workload resource**를 사용하여 ** 간접적으로 파드를 생성함.
