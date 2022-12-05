@@ -1,0 +1,58 @@
+# namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: assignment2
+
+---
+
+# db-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-deployment
+  namespace: assignment2
+spec:
+  replicas: 1
+  selector :
+    matchLabels:
+      app: db
+  # 여기부터 Pod 내용
+  template:
+    metadata:
+      name: db
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: db
+        image: mysql:5.7
+        env:
+        - name: MYSQL_USER
+          value: wordpress
+        - name: MYSQL_DATABASE
+          value: wordpress
+        - name: MYSQL_PASSWORD
+          value: wordpress
+        - name: MYSQL_ROOT_PASSWORD
+          value: wordpress
+        ports:
+        - containerPort: 3306
+
+---
+
+# db-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+  namespace: assignment2
+  labels:
+    app: db
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8001
+    targetPort: 3306
+  selector:
+    app: db
