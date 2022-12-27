@@ -2,7 +2,10 @@
 
 ## Docker Container
 - 가상화된 공간을 linux 자체 기능인 chroot, namespace, cgroup를 사용함으로써 프로세스 단위의 격리 환경을 만드는 기술
-  - chroot : 현재 실행중인 프로세스(+child)의 root directory 수정
+  - chroot : 현재 실행중인 프로세스(+child)의 root directory 수정 (Linux)
+  - namespace : 프로세스를 실행할 때 시스템의 리소스를 분리해서 실행할 수 있도록 도와주는 기능.
+  - cgroup : collection of process 의 resource usage 통제
+- Docker engine이 chroot... 등을 전부 담당한다. (container의 run time에 존재)
 
 ![VM   Container](https://user-images.githubusercontent.com/105041834/198866617-14896b03-1aeb-4d25-b69b-5cb212e34cfe.jpg)
 
@@ -38,6 +41,8 @@
   - 작고, 독립적으로 배포 가능한 각각의 기능을 수행하는 서비스로 구성된 Framework
   - 완전히 독립적으로 배포가 가능하고, 다른 기술 스택이 사용 가능한 단일 사업 영역에 초점을 둔다.
   - 독립된 서비스는 API를 통해서만 상호작용한다.
+
+> ex) 웹 서비스는 DB 컨테이너와 웹 서버 컨테이너로 분리 가능
 
 ## Reference
 - [Reference](학교 ppt)
