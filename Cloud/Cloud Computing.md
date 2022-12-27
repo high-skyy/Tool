@@ -1,6 +1,7 @@
 # Cloud Computing
 
 원격지의 컴퓨터 resource(CPU, Memory, Disk, Network)를 대여하여 사용하는것
+> 많은 resource의 demand가 생기기 때문에 필요에 의해 external resource를 쓰게 되는 경우가 많아졌다.
 
 ## Features
 - Pay-as-you-go(사용한 만큼 지불, 초기 설비 투자 비용이 없음으로 인해 경제적으로 좋다.)
@@ -10,8 +11,11 @@
 
 ## 가상화 기술(Virtualization technique)
 - VM(Virtual Machine)
+
 ![VM](https://user-images.githubusercontent.com/105041834/198866155-12da1982-95f4-4fe4-9c01-e19a486ab2fe.jpg)
+
 - Container
+
 ![Container](https://user-images.githubusercontent.com/105041834/198866153-7af3c4a8-0996-4c04-bdcf-821d8962ae3b.jpg)
 
 - 가상화 기술 (Virtual machine, Container)의 이점을 클라우드 컴퓨팅 서비스 구축에 활용
@@ -22,12 +26,15 @@
 ## Xaas
 - 서비스 제공자의 관리 범위에 따라 (Iaas, Paas, Saas)가 나뉜다.
 
-- ![Xaas](https://user-images.githubusercontent.com/105041834/198866270-6fe97db0-a88b-4abd-bf99-a45f2397d768.jpg)
+![Xaas](https://user-images.githubusercontent.com/105041834/198866270-6fe97db0-a88b-4abd-bf99-a45f2397d768.jpg)
 
 ## SLA(Service Level Agreement)
 - 제공하는 서비스에 대해 무엇을 보장하는지 명시 (위반시 보상)
 
 ## VPC(Virtual Private Cloud)
+
+![VPC](https://user-images.githubusercontent.com/105041834/209628705-d890e54d-cb86-4820-8df0-68467650b4bb.jpg)
+
 - VPC는 자체 데이터 센터에서 운영하는 기존 네트워크와 유사한 가상 네트워크
 - VPC를 생성한 후 서브넷을 추가할 수 있음
 - 서브넷은 VPC의 IP주소 범위

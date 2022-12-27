@@ -2,6 +2,8 @@
 
 ## Docker Container
 - 가상화된 공간을 linux 자체 기능인 chroot, namespace, cgroup를 사용함으로써 프로세스 단위의 격리 환경을 만드는 기술
+  - chroot : 현재 실행중인 프로세스(+child)의 root directory 수정
+
 ![VM   Container](https://user-images.githubusercontent.com/105041834/198866617-14896b03-1aeb-4d25-b69b-5cb212e34cfe.jpg)
 
 ### Features
