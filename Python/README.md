@@ -42,18 +42,16 @@ machine which is called the Python Virtual Machine.
 ![PVM](https://user-images.githubusercontent.com/105041834/210201423-c2f94142-f3b4-4f65-a1c1-55dfa00b3009.jpg)
 
 > Interpreted language의 경우에는 target machine에 바로 실행 되지 않고 interpreter라는 
-> program에 의해 machine code(byte code)로 translation이 일어나게 된다. Python은 interpreted 언어라고
+> program에 의해 machine code로 translation이 일어나게 된다. Python은 interpreted 언어라고
 > 알고 있지만 compiling도 같이 사용한다. Python program을 실행하게 되면 byte code로 먼저 
-> compile이 일어나며 이는 machine에 바로 적용이 되는 것이 아니라 PVM(interpreter 장착 되어 있음) 의 instruction으로 작용한다.
+> compile이 일어나며 이는 machine에 바로 적용이 되는 것이 아니라 PVM(interpreter 장착 되어 있음) 의 instruction으로 작용하며
+> PVM에 의해 byte code가 machine에도 적용이 될 수 있는 machine code로 변환이 일어난다.
 
-- byte code로 모든 instruction을 나타낸다.
+- byte code로 모든 machine code의 instruction을 나타낸다.
 - 보통 PVM이 대부분의 일을 하여 PVM을 보통 interpreter라고도 한다.
 
-## Python virtual machine
-> 여기서 "virtual machine"은 OS의 virtual machine을 의미 하는게 아니라
+> PVM에서 "virtual machine"은 OS의 virtual machine을 의미 하는게 아니라
 > process virtual machine (program)을 의미하는 것으로 programming environment를 의미한다.
-
-Java 의 경우에는 C++ 처럼 data type을 명시하게 되어 있으며 이는 
 
 ## Memory Management in Python
 ### Garbage collector
@@ -96,7 +94,7 @@ upon a threshold of object allocations and object deallocations. When the number
 of allocations minus the number of deallocations is greater then the threshold 
 number the garbage collector is run. 
 
-> 특정 (할당 의 수) - (release의 수) 가 특정 threshold 이상을 넘어가게 되면 garbage collector가 작동한다.
+> (할당 의 수) - (release의 수) 가 특정 threshold 이상을 넘어가게 되면 garbage collector가 작동한다.
 > Reference cycle을 찾는데 computation이 필요하기 때문에 schedule이 되어야 한다.
 
 #### Manual Garbage Collection
